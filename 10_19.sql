@@ -143,6 +143,32 @@ LOCK TABLES `store` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user_recipe`
+--
+
+DROP TABLE IF EXISTS `user_recipe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_recipe` (
+  `username` varchar(15) NOT NULL,
+  `recipeID` tinyint(1) NOT NULL,
+  PRIMARY KEY (`username`,`recipeID`),
+  KEY `user_recipe_recipe_recipeID_idx` (`recipeID`),
+  CONSTRAINT `user_recipe_recipe_recipeID` FOREIGN KEY (`recipeID`) REFERENCES `recipe` (`recipeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `user_recipe_users_username` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_recipe`
+--
+
+LOCK TABLES `user_recipe` WRITE;
+/*!40000 ALTER TABLE `user_recipe` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_recipe` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -180,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-19 16:31:29
+-- Dump completed on 2018-10-19 16:41:22
