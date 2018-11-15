@@ -1,30 +1,30 @@
 module.exports = {
   getData: function (data) {
-    // getData impl
+    return 'getData';
   },
   setData: function (data) {
-    // setData impl
+    return 'setData';
   },
   connect: function (connection) {
-    // connect impl
+    return 'connect';
   },
   close: function () {
-    // close impl
+    return 'close';
   },
   prepare: function (id) {
-    // prepare impl
+    return 'prepare';
   },
   prepareLocation: function (id) {
     prepare("SELECT storeName FROM store WHERE storeID = ?");
   },
   descTable: function () {
-    // descTable impl
+    return 'descTable';
   },
   login: function () {
-    // login impl
+    return 'login';
   },
   logout: function () {
-    // logout impl
+    return 'logout';
   },
   createUser: function (credentialString) {
     // createUser impl
@@ -33,7 +33,5 @@ module.exports = {
 	var pw = sha256(creds[1]);
 	var access=creds[2];
 	
-  },
-  connect: function	()	{
-	// connect to database
-  } };
+  }
+};
