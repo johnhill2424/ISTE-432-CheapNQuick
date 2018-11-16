@@ -6,8 +6,8 @@ module.exports = {
 	callSetData: function (data) {
 		return service.callSetData(data);
 	},
-	callConnect: function (connection) {
-		return service.callConnect(connection);
+	callConnect: function () {
+		return service.callConnect();
 	},
 	callClose: function () {
 		return service.callClose();

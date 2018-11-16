@@ -1,3 +1,7 @@
+const pg = require('pg');
+var pool = "";
+
+
 module.exports = {
   getData: function (data) {
     return 'getData';
@@ -5,8 +9,16 @@ module.exports = {
   setData: function (data) {
     return 'setData';
   },
-  connect: function (connection) {
-    return 'connect';
+  connect: function () {
+    pool = new pg.Pool({
+      user: 'postgres',
+      host: '127.0.0.1',
+      database: 'poncho',
+      password: 'student',
+      port: '5432'
+    });
+    
+    return pool;
   },
   closeFunc: function () {
     return 'close';
@@ -16,6 +28,13 @@ module.exports = {
   },
   prepareLocation: function (id) {
     prepare("SELECT storeName FROM store WHERE storeID = ?");
+  },
+  getAllRecipes: function (pool){
+    pool.query("SELECT * FROM recipe", (err, res) => {
+      console.log(err,res);
+      pool.end();
+      return res;
+    });
   },
   descTable: function () {
     return 'descTable';

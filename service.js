@@ -6,8 +6,8 @@ module.exports = {
 	callSetData: function (data) {
 		return dataLayer.setData(data);
 	},
-	callConnect: function (connection) {
-		return dataLayer.connect(connection);
+	callConnect: function () {
+		return dataLayer.connect();
 	},
 	callClose: function () {
 		return dataLayer.closeFunc();
