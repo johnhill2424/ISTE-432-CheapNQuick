@@ -13,10 +13,22 @@ module.exports = {
 		return business.callConnect(connectId);
 	},
 	closeDB: function () {
-		return business.callClose(close);
+		return business.callClose();
 	},
 	prepareStatement: function (id) {
-		return service.callPrepare(id);
-	}
+		return business.callPrepare(id);
+	},
+	descTable: function () {
+		return business.callDescTable();
+	},
+	login: function () {
+		return business.callLogin();
+	},
+	logout: function () {
+		return business.callLogout();
+	},
+	createUser: function (credentialString) {
+		return business.callCreateUser(credentialString);
 	
+	}	
 }

@@ -32,4 +32,24 @@ describe('App', function(){
 		assert.equal(result, 'prepare');
 	});
 	
+	it('app should return descTable', function(){
+		let result = app.descTable();
+		assert.equal(result, 'descTable');
+	});
+	
+	it('app should return login', function(){
+		let result = app.login();
+		assert.equal(result, 'login');
+	});
+	
+	it('app should return logout', function(){
+		let result = app.logout();
+		assert.equal(result, 'logout');
+	});
+	
+	it('example of a slight discrepancy', function(){
+		let result = app.createUser('create');
+		assert.equal(result, 'createUser');
+	});
+	
 });

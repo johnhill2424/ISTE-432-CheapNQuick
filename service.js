@@ -10,32 +10,35 @@ module.exports = {
 		return dataLayer.connect(connection);
 	},
 	callClose: function () {
-		return dataLayer.close();
+		return dataLayer.closeFunc();
 	},
 	callPrepare: function (id) {
 		return dataLayer.prepare(id);
 	},
 	callPrepareLocation: function (id) {
-		prepare("SELECT storeName FROM store WHERE storeID = ?");
+		//prepare("SELECT storeName FROM store WHERE storeID = ?");
+		return dataLayer.prepareLocation(id);
 	},
-	calDescTable: function () {
-		// descTable impl
+	callDescTable: function () {
+		return dataLayer.descTable();
 	},
 	callLogin: function () {
-		// login impl
+		return dataLayer.login();
 	},
 	callLogout: function () {
-		// logout impl
+		return dataLayer.logout();
 	},
-	calCreateUser: function (credentialString) {
+	callCreateUser: function (credentialString) {
 		// createUser impl
-		var creds = str.split(',');
-		var user=creds[0];
-		var pw = sha256(creds[1]);
-		var access=creds[2];
+		// var creds = str.split(',');
+		// var user=creds[0];
+		// var pw = sha256(creds[1]);
+		// var access=creds[2];
+		return dataLayer.createUser(credentialString);
 	
 	},
 	callConnect: function	()	{
 		// connect to database
+		return dataLayer.connect();
 	} 
 };

@@ -8,7 +8,7 @@ module.exports = {
   connect: function (connection) {
     return 'connect';
   },
-  close: function () {
+  closeFunc: function () {
     return 'close';
   },
   prepare: function (id) {
@@ -28,10 +28,10 @@ module.exports = {
   },
   createUser: function (credentialString) {
     // createUser impl
-	var creds = str.split(',');
-	var user=creds[0];
-	var pw = sha256(creds[1]);
-	var access=creds[2];
-	
+	// var creds = str.split(',');
+	// var user=creds[0];
+	// var pw = sha256(creds[1]);
+	// var access=creds[2];
+	return 'createuser';
   }
 };
